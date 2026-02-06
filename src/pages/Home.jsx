@@ -1,8 +1,50 @@
 import Spline from '@splinetool/react-spline';
 import '../assets/Home.css';
 import Navbar from '../components/navbar';
+import ProjectCard from '../components/ProjectCard';
 
 export default function Home() {
+  const projects = [
+    {
+      title: "KeepIt",
+      description: "Aplicación de Android para deslizar fotos (swipe) y decidir si mantenerlas o eliminarlas, ayudando a liberar espacio de almacenamiento de manera divertida.",
+      url: "https://github.com/0xlibless/KeepIt",
+      tags: [
+        { name: "JavaScript", color: "#fbd719" }, 
+        { name: "Android", color: "#3DDC84" },   
+        { name: "React Native", color: "#61dafb" }
+      ]
+    },
+    {
+      title: "Chatty.cpp",
+      description: "Una app de Android para inferencia de modelos LLM locales, escrita en JavaScript. LLMs privados y rápidos en tu dispositivo.",
+      url: "https://github.com/0xlibless/Chatty.cpp",
+      tags: [
+        { name: "JavaScript", color: "#fbd719" },
+        { name: "AI", color: "#ff66cc" },
+        { name: "Android", color: "#3DDC84" },   
+      ]
+    },
+    {
+      title: "ProxyScrapper",
+      description: "Script para extraer proxies utiles a partir de repositorios abiertos en Github",
+      url: "https://github.com/0xlibless/FreeProxyScraper",
+      tags: [
+        { name: "Python", color: "#3776ab" }, 
+        { name: "OSINT", color: "#ff4d4d" },
+        { name: "Ciberseguridad", color: "rgba(255, 255, 255, 1)" }
+      ]
+    },
+    {
+      title:"LEDBLELIB",
+      description: "Una libreria escrita en Python para poder controlar dispositivos Led BLE",
+      url: "https://github.com/0xlibless/LEDBLELIB",
+      tags: [
+        { name: "Python", color: "#3776ab" }
+      ]
+    }
+  ];
+
   return (
     <main>
       <Navbar />
@@ -37,8 +79,13 @@ export default function Home() {
         </div>      
       </section>
 
-      <section id="proyectos" style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
-          <h2 className="scroll-animate" style={{ fontSize: '4rem' }}>Proyectos</h2>
+      <section id="proyectos" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '4rem 2rem' }}>
+          <h2 className="scroll-animate" style={{ fontSize: '4rem', marginBottom: '3rem' }}>Proyectos</h2>
+          <div className="projects-grid scroll-animate">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
       </section>
 
       <section id="contacto" style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, backgroundColor: 'rgba(0,0,0,0.5)' }}>
