@@ -1,0 +1,8 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Interphases Pro';
+    src: url('assets/fonts/TT Interphases Pro Trial DemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
