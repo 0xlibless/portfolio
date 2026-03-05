@@ -14,6 +14,7 @@ export default function KeepIt() {
     const [apkUrl, setApkUrl] = useState('https://github.com/AguuZzz/KeepIt/releases/');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getLatestRelease().then(v => setVersion(v)).catch(() => {});
         getLatestApkUrl().then(url => { if (url) setApkUrl(url); }).catch(() => {});
     }, []);
