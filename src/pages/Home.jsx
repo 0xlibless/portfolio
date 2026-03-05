@@ -9,13 +9,13 @@ export default function Home() {
     {
       title: "KeepIt",
       description: "Aplicación Android enfocada en la gestión de fotos, utilizando gestos tipo swipe para decidir de forma rápida qué imágenes conservar o eliminar, optimizando el espacio de almacenamiento.",
-      url: "https://github.com/0xlibless/KeepIt",
+      url: "#/keepit",
       tags: [
         { name: "JavaScript", color: "#fbd719" }, 
         { name: "Android", color: "#3DDC84" },   
         { name: "React Native", color: "#61dafb" }
       ],
-      icon: "github"
+      icon: "detail"
     },
     {
       title: "Chatty.cpp",

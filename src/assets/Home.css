@@ -124,6 +124,32 @@ a {
     transform: scale(1.05);
 }
 
+.nav-btn,
+.nav-back {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Interphases Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-btn:hover,
+.nav-back:hover {
+    color: #df99ff;
+    text-shadow: 0 0 10px rgba(223, 153, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.nav-back {
+    color: #df99ff;
+}
+
 .intro {
     position: relative;
     z-index: 2;
