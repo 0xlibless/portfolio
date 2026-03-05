@@ -1,5 +1,5 @@
 import '../assets/Home.css';
-import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaCodeBranch } from "react-icons/fa";
 
 export default function ProjectCard({ title, description, tags, url, icon }) {
     return (
@@ -11,6 +11,9 @@ export default function ProjectCard({ title, description, tags, url, icon }) {
                 )}
                 {icon == "globe" && (
                     <FaGlobe size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#fff" />
+                )}
+                {icon == "branch" && (
+                    <FaCodeBranch size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#fff" />
                 )}
                 <p className="project-description">{description}</p>
                 <div className="project-tags">

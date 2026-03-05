@@ -23,7 +23,9 @@ export default function Home() {
       tags: [
         { name: "JavaScript", color: "#fbd719" },
         { name: "AI", color: "#ff66cc" },
-        { name: "Android", color: "#3DDC84" },   
+        { name: "Android", color: "#3DDC84" }, 
+        { name: "React Native", color: "#61dafb" }
+  
       ],
       icon: "github"
     },
@@ -66,7 +68,7 @@ export default function Home() {
          <Spline className="robot" scene="/robot.splinecode" />
       </div>
 
-      <section id="inicio" style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
+      <section id="inicio" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
         <div className="intro scroll-animate">
             <h1 style={{ fontFamily: 'Interphases Pro', color: '#fff', fontSize: '55px', fontWeight: 'bold', marginBottom: '-15px' }}>Bienvenido! Soy <span className="text-neon">Agustín</span></h1>
             <p style={{ fontFamily: 'Interphases Pro', color: '#fff', fontSize: '30px', fontWeight: 'bold', width: '615px' }}><span className="text-neon">Desarrollador de Software</span> enfocado en Web, Mobile y Seguridad Informática. 
@@ -76,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sobre-mi" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '2rem' }}>
+      <section id="sobre-mi" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '2rem' }}>
         <div className="scroll-animate glass" style={{ padding: '3rem', maxWidth: '800px', textAlign: 'left', width:'120vh' }}>
             <h2 style={{ fontFamily: 'Interphases Pro', fontSize: '3rem', marginBottom: '1.5rem', background: 'linear-gradient(90deg, #fff, #ccc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sobre mí</h2>
             <div style={{ fontFamily: 'Interphases Pro', fontSize: '1.1rem', lineHeight: '1.6', color: '#e0e0e0', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
@@ -102,7 +104,7 @@ export default function Home() {
           </div>
       </section>
 
-      <section id="contacto" style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, backgroundColor: 'rgba(0,0,0,0.5)' }}>
+      <section id="contacto" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, backgroundColor: 'rgba(0,0,0,0.5)' }}>
           <h2 className="scroll-animate" style={{ fontSize: '4rem' }}>Contacto</h2>
       </section>
     </main>

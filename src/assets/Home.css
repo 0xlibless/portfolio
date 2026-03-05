@@ -64,12 +64,6 @@ a {
     z-index: 1;
 }
 
-.intro {
-    position: relative;
-    z-index: 2;
-    left: -20%;
-}
-
 .navbar ul {
     position: relative;
     top: -15px;
@@ -98,7 +92,7 @@ a {
     position: relative;
     z-index: 2;
     left: -20%;
-    top: 23%;
+    top: 3%;
 }
 
 .text-neon {
