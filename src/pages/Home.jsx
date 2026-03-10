@@ -83,15 +83,15 @@ export default function Home() {
   };
 
   const stack = [
-    { icon: <SiPython size={36} color="#3776ab" />, label: 'Python' },
-    { icon: <SiJavascript size={36} color="#f7df1e" />, label: 'JavaScript' },
-    { icon: <SiNodedotjs size={36} color="#339933" />, label: 'Node.js' },
-    { icon: <SiReact size={36} color="#61dafb" />, label: 'React' },
-    { icon: <SiReact size={36} color="#00b4d8" />, label: 'React Native' },
-    { icon: <SiHtml5 size={36} color="#e34f26" />, label: 'HTML' },
-    { icon: <SiCss3 size={36} color="#1572b6" />, label: 'CSS' },
-    { icon: <SiGnubash size={36} color="#4eaa25" />, label: 'Bash' },
-    { icon: <SiLinux size={36} color="#fff" />, label: 'Linux' },
+    { icon: <SiPython size={29} color="#3776ab" />, label: 'Python' },
+    { icon: <SiJavascript size={29} color="#f7df1e" />, label: 'JavaScript' },
+    { icon: <SiNodedotjs size={29} color="#339933" />, label: 'Node.js' },
+    { icon: <SiReact size={29} color="#61dafb" />, label: 'React' },
+    { icon: <SiReact size={29} color="#00b4d8" />, label: 'React Native' },
+    { icon: <SiHtml5 size={29} color="#e34f26" />, label: 'HTML' },
+    { icon: <SiCss3 size={29} color="#1572b6" />, label: 'CSS' },
+    { icon: <SiGnubash size={29} color="#4eaa25" />, label: 'Bash' },
+    { icon: <SiLinux size={29} color="#fff" />, label: 'Linux' },
   ];
 
   const projects = [
@@ -156,7 +156,7 @@ export default function Home() {
       <div ref={cursorDot} className="cursor-dot" />
       <div ref={cursorRing} className="cursor-ring" />
       <Navbar />
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, mixBlendMode: 'lighten' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, mixBlendMode: 'lighten', transform: 'scale(0.8)', transformOrigin: 'top center' }}>
          <Spline className="robot" scene={`${import.meta.env.BASE_URL}robot.splinecode`} />
       </div>
 
@@ -171,9 +171,9 @@ export default function Home() {
       </section>
 
       <section id="sobre-mi" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '2rem' }}>
-        <div className="scroll-animate glass glass-sobre-mi" style={{ padding: '3rem', maxWidth: '800px', textAlign: 'left', width:'120vh' }}>
-            <h2 style={{ fontFamily: 'Interphases Pro', fontSize: '3rem', marginBottom: '1.5rem', background: 'linear-gradient(90deg, #fff, #ccc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sobre mí</h2>
-            <div style={{ fontFamily: 'Interphases Pro', fontSize: '1.1rem', lineHeight: '1.6', color: '#e0e0e0', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+        <div className="scroll-animate glass glass-sobre-mi" style={{ padding: '2.4rem', maxWidth: '640px', textAlign: 'left', width:'120vh' }}>
+            <h2 style={{ fontFamily: 'Interphases Pro', fontSize: '2.4rem', marginBottom: '1.2rem', background: 'linear-gradient(90deg, #fff, #ccc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sobre mí</h2>
+            <div style={{ fontFamily: 'Interphases Pro', fontSize: '0.88rem', lineHeight: '1.6', color: '#e0e0e0', display: 'flex', flexDirection: 'column', gap: '0.96rem'}}>
                 <p>
                     Soy un joven apasionado por la tecnología. Desde chico exploré la computadora por mi cuenta, lo que me llevó a aprender de forma autodidacta programación, interfaces, terminales y sistemas operativos, especialmente <span className="text-neon">Linux</span>.
                 </p>
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       <section id="stack" style={{ minHeight: '35vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '3rem 0' }}>
-        <h2 className="scroll-animate" style={{ fontSize: '3rem', marginBottom: '2.5rem' }}>Stack</h2>
+        <h2 className="scroll-animate" style={{ fontSize: '2.4rem', marginBottom: '2rem' }}>Stack</h2>
         <div className="scroll-animate carousel-wrapper"
           ref={carouselRef}
           onMouseDown={e => onDragStart(e.clientX)}
@@ -211,14 +211,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="proyectos" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '4rem 2rem' }}>
-          <h2 className="scroll-animate" style={{ fontSize: '4rem', marginBottom: '3rem' }}>Proyectos</h2>
+      <section id="proyectos" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '3.2rem 1.6rem' }}>
+          <h2 className="scroll-animate" style={{ fontSize: '3.2rem', marginBottom: '2.4rem' }}>Proyectos</h2>
           <div className="projects-grid projects-grid-animate">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
-            <div className="project-card glass" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', padding: '2rem' }}>
-              <h3 style={{ fontFamily: 'Interphases Pro', color: '#fff', fontSize: '1.3rem', margin: 0, letterSpacing: '0.5px' }}>GitHub Stats</h3>
+            <div className="project-card glass" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.2rem', padding: '1.6rem' }}>
+              <h3 style={{ fontFamily: 'Interphases Pro', color: '#fff', fontSize: '1.04rem', margin: 0, letterSpacing: '0.5px' }}>GitHub Stats</h3>
               {statsLoading && (
                 <p style={{ fontFamily: 'Interphases Pro', color: '#aaa', margin: 0 }}>Cargando...</p>
               )}
@@ -226,21 +226,21 @@ export default function Home() {
                 <p style={{ fontFamily: 'Interphases Pro', color: '#ff6b6b', fontSize: '0.85rem', margin: 0 }}>{statsError}</p>
               )}
               {stats && (
-                <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem' }}>
-                    <FaCodeBranch size={28} color="#df99ff" />
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '2.5rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.mergedPRs}</span>
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.85rem', color: '#ccc' }}>PRs merged</span>
+                <div style={{ display: 'flex', gap: '1.6rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.32rem' }}>
+                    <FaCodeBranch size={22} color="#df99ff" />
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '1.6rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.mergedPRs}</span>
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.68rem', color: '#ccc' }}>PRs merged</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem' }}>
-                    <FaFire size={28} color="#df99ff" />
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '2.5rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.currentStreak}</span>
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.85rem', color: '#ccc' }}>días seguidos</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.32rem' }}>
+                    <FaFire size={22} color="#df99ff" />
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '1.6rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.currentStreak}</span>
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.68rem', color: '#ccc' }}>días seguidos</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem' }}>
-                    <FaGithub size={28} color="#df99ff" />
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '2.5rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.totalContribs}</span>
-                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.85rem', color: '#ccc' }}>contribuciones {new Date().getFullYear()}</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.32rem' }}>
+                    <FaGithub size={22} color="#df99ff" />
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '1.6rem', fontWeight: 'bold', color: '#df99ff', textShadow: '0 0 12px rgba(223,153,255,0.7)', lineHeight: 1 }}>{stats.totalContribs}</span>
+                    <span style={{ fontFamily: 'Interphases Pro', fontSize: '0.68rem', color: '#ccc' }}>contribuciones {new Date().getFullYear()}</span>
                   </div>
                 </div>
               )}
@@ -248,8 +248,8 @@ export default function Home() {
           </div>
       </section>
 
-      <section id="contacto" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '4rem 2rem' }}>
-          <h2 className="scroll-animate" style={{ fontSize: '4rem', marginBottom: '2rem' }}>Contacto</h2>
+      <section id="contacto" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2, padding: '3.2rem 1.6rem' }}>
+          <h2 className="scroll-animate" style={{ fontSize: '3.2rem', marginBottom: '1.6rem' }}>Contacto</h2>
           <Contact/>
       </section>
 

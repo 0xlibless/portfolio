@@ -18,7 +18,7 @@ body {
 @keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(100px) scale(0.9);
+        transform: translateY(80px) scale(0.9);
     }
 
     to {
@@ -56,9 +56,9 @@ a {
 
 .navbar {
     width: 35%;
-    height: 50px;
+    height: 40px;
     position: fixed;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 9999px;
@@ -66,8 +66,8 @@ a {
 }
 
 .pfp{
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     display: block;
 }
@@ -93,9 +93,9 @@ a {
     background: none;
     border: none;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.28rem;
     cursor: pointer;
-    padding: 0.4rem 0.8rem;
+    padding: 0.32rem 0.64rem;
     z-index: 101;
 }
 
@@ -119,7 +119,7 @@ a {
     color: #fff;
     display: block;
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
@@ -138,7 +138,7 @@ a {
     border: none;
     color: #fff;
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -162,23 +162,23 @@ a {
     position: relative;
     z-index: 2;
     left: -20%;
-    top: 3%;
+    top: -4%;
 }
 
 .intro-title {
     font-family: 'Interphases Pro', sans-serif;
     color: #fff;
-    font-size: 55px;
+    font-size: 44px;
     font-weight: bold;
-    margin-bottom: -15px;
+    margin-bottom: -12px;
 }
 
 .intro-text {
     font-family: 'Interphases Pro', sans-serif;
     color: #fff;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
-    width: 615px;
+    width: 492px;
 }
 
 .text-neon {
@@ -191,10 +191,10 @@ a {
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.6rem;
     width: 100%;
-    max-width: 1200px;
-    padding: 2rem;
+    max-width: 960px;
+    padding: 1.6rem;
 }
 
 .projects-grid-animate {
@@ -217,7 +217,7 @@ a {
 
 .project-card {
     display: block;
-    padding: 2rem;
+    padding: 1.6rem;
     text-decoration: none;
     transition: transform 0.3s ease, background 0.3s ease;
     position: relative;
@@ -225,45 +225,45 @@ a {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 35px rgba(223, 153, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .project-title {
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 1.8rem !important;
-    margin-bottom: 1rem;
+    font-size: 1.44rem !important;
+    margin-bottom: 0.8rem;
     color: #fff !important;
 }
 
 .project-description {
     font-family: 'Interphases Pro', sans-serif;
     color: #cccccc !important;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     line-height: 1.5;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.64rem;
 }
 
 .tag {
-    font-size: 0.9rem;
-    padding: 0.4rem 1rem;
+    font-size: 0.72rem;
+    padding: 0.32rem 0.8rem;
     border-radius: 9999px;
     font-weight: 600;
 }
 
 .contact {
-    height: 120px;
-    width: 800px;
+    height: 96px;
+    width: 640px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7rem;
+    gap: 5.6rem;
 }
 
 .contact a {
@@ -279,44 +279,41 @@ a {
     transform: scale(1.0);
 }
 
-/* ============================
-   FOOTER
-   ============================ */
 .site-footer {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-    padding: 2rem 1rem 2.5rem;
+    gap: 0.48rem;
+    padding: 1.6rem 0.8rem 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .footer-inner {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .footer-label {
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-hits {
-    height: 22px;
+    height: 18px;
     border-radius: 6px;
     filter: brightness(1.15);
 }
 
 .footer-copy {
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.62rem;
     color: rgba(255, 255, 255, 0.2);
     margin: 0;
 }
@@ -326,8 +323,8 @@ a {
     html, body, a, button { cursor: none !important; }
 
     .cursor-dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         background: #df99ff;
         border-radius: 50%;
         position: fixed;
@@ -338,9 +335,9 @@ a {
     }
 
     .cursor-ring {
-        width: 36px;
-        height: 36px;
-        border: 1.5px solid rgba(223, 153, 255, 0.45);
+        width: 29px;
+        height: 29px;
+        border: 1.2px solid rgba(223, 153, 255, 0.45);
         border-radius: 50%;
         position: fixed;
         pointer-events: none;
@@ -352,7 +349,7 @@ a {
 
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -377,22 +374,22 @@ a {
 
 .carousel-track {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     width: max-content;
     will-change: transform;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
 }
 
 .stack-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1.1rem 1.2rem;
-    border-radius: 14px;
+    gap: 0.4rem;
+    padding: 0.88rem 0.96rem;
+    border-radius: 11px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    min-width: 88px;
+    min-width: 70px;
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     cursor: default;
     flex-shrink: 0;
@@ -401,19 +398,18 @@ a {
 .stack-item:hover {
     background: rgba(223, 153, 255, 0.1);
     border-color: rgba(223, 153, 255, 0.4);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 0 20px rgba(223, 153, 255, 0.2);
 }
 
 .stack-label {
     font-family: 'Interphases Pro', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.56rem;
     color: #aaa;
     letter-spacing: 0.4px;
     text-align: center;
     white-space: nowrap;
 }
-
 
 /* ============================
    RESPONSIVE TABLET (768–1023px)

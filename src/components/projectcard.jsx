@@ -25,16 +25,16 @@ export default function ProjectCard({ title, description, tags, url, icon }) {
             <div className="project-content">
                 <h3 className="project-title">{title}</h3>
                 {icon == "github" && (
-                    <FaGithub size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#fff" />
+                    <FaGithub size={30} style={{position: 'absolute', top: '48px', right: '30px'}} color="#fff" />
                 )}
                 {icon == "globe" && (
-                    <FaGlobe size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#fff" />
+                    <FaGlobe size={30} style={{position: 'absolute', top: '48px', right: '30px'}} color="#fff" />
                 )}
                 {icon == "branch" && (
-                    <FaCodeBranch size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#fff" />
+                    <FaCodeBranch size={30} style={{position: 'absolute', top: '48px', right: '30px'}} color="#fff" />
                 )}
                 {icon == "detail" && (
-                    <FaArrowRight size={30} style={{position: 'absolute', top: '60px', right: '30px'}} color="#df99ff" />
+                    <FaArrowRight size={30} style={{position: 'absolute', top: '48px', right: '30px'}} color="#df99ff" />
                 )}
                 <p className="project-description">{description}</p>
                 <div className="project-tags">
