@@ -319,35 +319,6 @@ a {
 }
 
 
-@media (pointer: fine) {
-    html, body, a, button { cursor: none !important; }
-
-    .cursor-dot {
-        width: 6px;
-        height: 6px;
-        background: #df99ff;
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 12px rgba(223, 153, 255, 0.9);
-    }
-
-    .cursor-ring {
-        width: 29px;
-        height: 29px;
-        border: 1.2px solid rgba(223, 153, 255, 0.45);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9998;
-        transform: translate(-50%, -50%);
-        transition: left 0.09s ease, top 0.09s ease;
-    }
-}
-
-
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }

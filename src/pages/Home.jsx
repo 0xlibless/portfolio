@@ -20,23 +20,6 @@ export default function Home() {
       .finally(() => setStatsLoading(false));
   }, []);
 
-  const cursorDot = useRef(null);
-  const cursorRing = useRef(null);
-  useEffect(() => {
-    const move = (e) => {
-      if (cursorDot.current) {
-        cursorDot.current.style.left = e.clientX + 'px';
-        cursorDot.current.style.top = e.clientY + 'px';
-      }
-      if (cursorRing.current) {
-        cursorRing.current.style.left = e.clientX + 'px';
-        cursorRing.current.style.top = e.clientY + 'px';
-      }
-    };
-    window.addEventListener('mousemove', move);
-    return () => window.removeEventListener('mousemove', move);
-  }, []);
-
   const carouselRef = useRef(null);
   const trackRef = useRef(null);
   const posRef = useRef(0);
@@ -149,13 +132,22 @@ export default function Home() {
         { name: "C++", color: "#00599c" },
       ],
       icon: "github"
+    },
+    {
+      title: "Super TaTeTi",
+      description: "Un juego propio usando de base el juego TicTacToe, pero con un nivel más alto de dificultad. Desarrollado en React Native, con backend multijugador",
+      url: "https://github.com/0xlibless/SuperTaTeTi/",
+      tags: [
+        { name: "JavaScript", color: "#fbd719" },
+        { name: "Android", color: "#3DDC84" }, 
+        { name: "React Native", color: "#61dafb" }
+      ],
+      icon: "github"
     }
   ];
 
   return (
     <main>
-      <div ref={cursorDot} className="cursor-dot" />
-      <div ref={cursorRing} className="cursor-ring" />
       <Navbar />
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, mixBlendMode: 'lighten', transform: 'scale(0.8)', transformOrigin: 'top center' }}>
          <Spline className="robot" scene={`${import.meta.env.BASE_URL}robot.splinecode`} />

@@ -6,3 +6,38 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@media (pointer: fine) {
+    html, body, body * {
+        cursor: none !important;
+    }
+
+    .cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: #df99ff;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px rgba(223, 153, 255, 0.9);
+        will-change: transform, opacity;
+        transition: opacity 0.2s ease;
+    }
+
+    .cursor-ring {
+        width: 29px;
+        height: 29px;
+        border: 1.2px solid rgba(223, 153, 255, 0.45);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        will-change: transform, opacity;
+        transition: transform 0.10s ease-out, opacity 0.2s ease;
+    }
+}
