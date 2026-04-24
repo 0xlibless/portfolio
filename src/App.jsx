@@ -1,6 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import KeepIt from './pages/KeepIt';
 import CustomCursor from './components/customcursor';
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
       <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/keepit" element={<KeepIt />} />
+        <Route path="/about" element={<Home />} />
       </Routes>
     </HashRouter>
   );

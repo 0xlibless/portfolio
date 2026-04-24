@@ -73,7 +73,39 @@ function HeroImage({ containerRef }) {
 }
 
 export default function Home() {
-  const heroRef = useRef(null);
+  const mainRef = useRef(null);
+  const [activeSection, setActiveSection] = useState({});
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const sectionList = ["about", "work", "stack", "contact"];
+          const index = sectionList.indexOf(id);
+          
+          if (index !== -1) {
+            setActiveSection({
+              number: String(index + 1).padStart(2, "0"),
+              name: id.toUpperCase(),
+            });
+          }
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline({ delay: 0.15 });
@@ -114,13 +146,19 @@ export default function Home() {
         { opacity: 0, duration: 0.7 },
         "-=.4"
       );
-  }, { scope: heroRef });
+  }, { scope: mainRef });
 
   return (
-    <>
+    <div ref={mainRef}>
       <Navbar />
+      <div className="hero-index">{activeSection.number} / {activeSection.name}</div>
 
-      <section className="hero" ref={heroRef}>
+      <div className="hero-scroll">
+        <div className="scroll-line" />
+        Scroll
+      </div>
+
+      <section id="about" className="hero">
         <div className="grain" />
         <div className="tape-band">
           <span className="tape-text">{TAPE_CONTENT}</span>
@@ -151,15 +189,20 @@ export default function Home() {
           </div>
         </div>
 
-        <HeroImage containerRef={heroRef} />
+        <HeroImage containerRef={mainRef} />
 
-        <div className="hero-index">01 / HERO</div>
-
-        <div className="hero-scroll">
-          <div className="scroll-line" />
-          Scroll
-        </div>
       </section>
-    </>
+
+      <section id="work" style={{ minHeight: '100vh', background: '#e0e0e0', padding: '100px 20px' }}>
+
+      </section>
+
+      <section id="stack" style={{ minHeight: '100vh', background: '#eeede8', padding: '100px 20px' }}>
+
+      </section>
+
+      <section id="contact" style={{ minHeight: '100vh', background: '#e0e0e0', padding: '100px 20px' }}>
+      </section>
+    </div>
   );
 }

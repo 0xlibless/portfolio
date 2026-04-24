@@ -184,7 +184,7 @@
 }
 
 .hero-index {
-    position: absolute;
+    position: fixed;
     bottom: 36px;
     left: 44px;
     z-index: 10;
@@ -196,7 +196,7 @@
 }
 
 .hero-scroll {
-    position: absolute;
+    position: fixed;
     bottom: 36px;
     right: 44px;
     z-index: 10;

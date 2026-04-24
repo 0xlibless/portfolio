@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Logo from './Logo';
@@ -9,35 +10,51 @@ export default function Navbar() {
     const container = useRef();
 
     useGSAP(() => {
-        gsap.from(".navbar", {
-        y: -60,
-        opacity: 100,
-        duration: 0.9,
-        ease: "power3.out",
+        gsap.from(container.current, {
+            y: -60,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
         });
 
         gsap.to(".nav-links a", {
-        y: -20,
-        opacity: 100,
-        duration: 0.6,
-        stagger: 0.08,
-        delay: 0.4,
-        ease: "power2.out",
+            y: -20,
+            opacity: 100,
+            duration: 0.6,
+            stagger: 0.08,
+            delay: 0.4,
+            ease: "power2.out",
+        });
+        gsap.to(".nav-status", {
+            opacity: 100,
+            duration: 0.6,
+            delay: 0.5,
+            color: "#eeede8a9",
+            ease: "power2.out",
         });
     }, { scope: container });
+
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <nav className="navbar" ref={container}>
         <div className="nav-logo">
-            <Logo color="#eeede8" size="30px" />
+            <Link style={{height: "30px"}} to="/">
+                <Logo color="#eeede8" size="30px" />
+            </Link>
         </div>
 
         <ul className="nav-links">
-            {["About", "Work", "Stack", "Contact"].map((l) => (
-            <li key={l}>
-                <a href={`#${l.toLowerCase()}`}>{l}</a>
-            </li>
-            ))}
+            <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About</a></li>
+            <li><a href="#work" onClick={(e) => handleScroll(e, 'work')}>Work</a></li>
+            <li><a href="#stack" onClick={(e) => handleScroll(e, 'stack')}>Stack</a></li>
+            <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact</a></li>
         </ul>
 
         <div className="nav-status">
