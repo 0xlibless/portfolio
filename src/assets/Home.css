@@ -12,7 +12,8 @@
 
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
     background: #eeede8;
     padding-top: 58px;
@@ -74,19 +75,19 @@
     color: rgba(255, 255, 255, .82);
     letter-spacing: 10px;
     animation: tapescroll linear infinite;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .tape-band:nth-child(odd) .tape-text {
-    animation-duration: 22s;
+    animation-duration: 10s;
 }
 
 .tape-band:nth-child(even) .tape-text {
-    animation-duration: 30s;
+    animation-duration: 13s;
 }
 
 .tape-band:nth-child(3) .tape-text {
-    animation-duration: 17s;
+    animation-duration: 8s;
 }
 
 @keyframes tapescroll {
@@ -99,11 +100,10 @@
     }
 }
 
-/* ─── HERO CONTENT ───────────────────────── */
 .hero-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 44%;
+    left: 24%;
     transform: translate(-46%, -48%);
     z-index: 8;
     display: flex;
@@ -172,31 +172,15 @@
 }
 
 .hero-image {
+    left: 59%;
     position: absolute;
-    right: 5%;
-    top: 58%;
+    right: 0%;
+    top: 41%;
     transform: translateY(-50%);
-    width: clamp(170px, 20vw, 280px);
-    height: clamp(270px, 32vw, 440px);
+    width: 65vh;
+    height: 67vh;
     z-index: 5;
     will-change: transform;
-}
-
-.hero-image svg {
-    width: 100%;
-    height: 100%;
-    filter: contrast(1.15);
-    mix-blend-mode: multiply;
-}
-
-.hero-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(to bottom, transparent 0, transparent 2px,
-            rgba(0, 0, 0, .07) 2px, rgba(0, 0, 0, .07) 3px);
-    pointer-events: none;
-    z-index: 1;
 }
 
 .hero-index {
@@ -244,18 +228,4 @@
     50% {
         width: 28px
     }
-}
-
-.hero-year {
-    position: absolute;
-    right: -26px;
-    top: 50%;
-    z-index: 10;
-    transform: translateY(-50%) rotate(90deg);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 8.5px;
-    color: #bbb;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    white-space: nowrap;
 }

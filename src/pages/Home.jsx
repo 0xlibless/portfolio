@@ -2,73 +2,77 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Navbar from "../components/navbar";
 
-const ZH = " Todavia ・ no ・ ";
-const TAPE_CONTENT = ZH.repeat(8);
+const PHRASES = [
+  " まだ・まだ・早い ・ ", // Todavía es muy pronto / No es suficiente
+  " 夢を・追いかけて ・ ",   // Persigue tus sueños
+  " 限界を・超えて ・ ",     // Supera los límites
+  " 未来を・作る ・ ",       // Crea el futuro
+  " 創造・破壊 ・ ",         // Creación y destrucción
+  " 今を・生きる ・ ",       // Vive el momento
+];
 
-function PersonSVG() {
-  return (
-    <h1>aca habria un svg</h1>
-  )
-}
+const RANDOM_PHRASE = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+const TAPE_CONTENT = RANDOM_PHRASE.repeat(20);
 
-function TapeBands() {
-  return (
-    <>
-      <div className="tape-band">
-        <span className="tape-text">{TAPE_CONTENT}</span>
-      </div>
-    </>
-  );
-}
 
-function HeroImage() {
-  const ref = useRef(null);
+function HeroImage({ containerRef }) {
+  const imageRef = useRef(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el || !window.gsap) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    let raf;
-    let targetX = 0;
-    let targetY = 0;
+    const handleMouseMove = (e) => {
+      const { left, top, width, height } = container.getBoundingClientRect();
+      const relX = e.clientX - left;
+      const relY = e.clientY - top;
 
-    const onMove = (e) => {
-      targetX = ((e.clientX / window.innerWidth) - 0.5) * 2;
-      targetY = ((e.clientY / window.innerHeight) - 0.5) * 2;
-    };
+      const movement = -30;
+      const x = ((relX - width / 2) / width) * movement + 10;
+      const y = ((relY - height / 2) / height) * movement + 10;
 
-    const tick = () => {
-      gsap.to(el, {
-        x: targetX * 26,
-        y: targetY * 20,
-        rotation: targetX * 2.2,
-        duration: 1.6,
+      gsap.to(imageRef.current, {
+        x: x,
+        y: y,
+        duration: 1,
         ease: "power2.out",
       });
-
-      raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener("mousemove", onMove);
-    raf = requestAnimationFrame(tick);
+    container.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", onMove);
-      cancelAnimationFrame(raf);
+      container.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [containerRef]);
 
   return (
-    <div className="hero-image" ref={ref}>
-      <PersonSVG />
-      <div className="hero-year">PORTFOLIO · MMXXVI</div>
+    <div
+      className="hero-image"
+      style={{
+        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+        maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        ref={imageRef}
+        style={{
+          width: "100%",
+          filter: "grayscale(100%)",
+          justifyContent: "center",
+          alignItems: "center", 
+          scale: "0.7",
+        }}
+        src="/hero-image.png"
+        alt="Hero"
+      />
     </div>
   );
 }
 
-export default function HeroPortfolio() {
-
-
+export default function Home() {
+  const heroRef = useRef(null);
 
   useEffect(() => {
     if (!window.gsap) return;
@@ -83,7 +87,7 @@ export default function HeroPortfolio() {
     })
       .from(
         ".hero-label",
-        { y: 22, opacity: 0, duration: 0.65 },
+        { y: 22, opacity: 0, duration: 0.35 },
         "-=.4"
       )
       .from(
@@ -117,10 +121,11 @@ export default function HeroPortfolio() {
     <>
       <Navbar />
 
-      <section className="hero">
+      <section className="hero" ref={heroRef}>
         <div className="grain" />
-        <TapeBands />
-
+        <div className="tape-band">
+          <span className="tape-text">{TAPE_CONTENT}</span>
+        </div>
         <div className="hero-content">
           <p className="hero-label">Portfolio 2026</p>
 
@@ -147,7 +152,7 @@ export default function HeroPortfolio() {
           </div>
         </div>
 
-        <HeroImage />
+        <HeroImage containerRef={heroRef} />
 
         <div className="hero-index">01 / HERO</div>
 
