@@ -223,6 +223,48 @@
     animation: linepulse 2s ease-in-out infinite;
 }
 
+.aboutme {
+    border: 1px solid #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-left: 20%;
+    width: 89%;
+    height: 50%;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    top: 35%;
+    left: -15%;
+    padding: 40px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.aboutme p {
+    font-family: 'Space Grotesk', 'Arial', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #0a0a0a;
+    margin: 0;
+}
+
+.subtitle {
+    font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+    font-size: clamp(32px, 5vw, 88px);
+    line-height: .88;
+    color: #0a0a0a;
+    letter-spacing: -1px;
+    margin-top: -300px;
+}
+
+.aboutme .subtitle {
+    margin: 0;
+}
+
 @keyframes linepulse {
 
     0%,

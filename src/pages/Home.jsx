@@ -149,7 +149,7 @@ export default function Home() {
       
       const scrollt = gsap.timeline({
         scrollTrigger: {
-          trigger: ".hero",
+          trigger: ".hero-container",
           end: "+=300%",
           scrub: 1,
           pin: true,
@@ -175,8 +175,18 @@ export default function Home() {
       )
       .to("#logomask", {
         maskPosition: "50% 20%",
-        duration: .1,
-      });
+        duration: .05,
+      })
+      .to(".aboutme", {
+        opacity: 1,
+        duration: 0.05,
+      })
+      .to(".subtitle", {
+        opacity: 1,
+        zIndex: 1,
+        duration: 0.05,
+        ease: "power2.out",
+      }, "<=")
   }, { scope: mainRef });
 
   return (
@@ -189,10 +199,11 @@ export default function Home() {
         Scroll
       </div>
 
-      <div 
-        id="logomask" 
-        className="hero"
-        style={{
+      <div className="hero-container" style={{ position: "relative" }}>
+        <div 
+          id="logomask" 
+          className="hero"
+          style={{
           WebkitMaskImage: 'url("/favicon.svg")',
           maskImage: 'url("/favicon.svg")',
           WebkitMaskRepeat: 'no-repeat',
@@ -224,14 +235,21 @@ export default function Home() {
             </h1>
             <div className="hero-tags">
               <span className="hero-tag filled">Dev</span>
-              <span className="hero-tag">Student</span>
-              <span className="hero-tag">Builder</span>
+              <span className="hero-tag">Estudiante</span>
+              <span className="hero-tag">Programador</span>
             </div>
           </div>
 
           <HeroImage containerRef={mainRef} />
-
         </section>
+      </div>
+
+      <div className="aboutme">
+        <h1 className="subtitle">Sobre mi</h1>
+        <p>Soy un joven apasionado por la tecnología. Desde chico exploré la computadora por mi cuenta, lo que me llevó a aprender de forma autodidacta programación, interfaces, terminales y sistemas operativos, especialmente Linux.</p>
+        <p>Profundicé en desarrollo web y mobile con Python, JavaScript, Node.js y React, siempre buscando entender el funcionamiento interno. Además, me formé en ciberseguridad y pentesting, aplicando técnicas de OSINT y herramientas como Shodan, Nmap y Burp Suite.</p>
+        <p>Actualmente estudio Ciencias de la Computación en la Universidad Nacional del Comahue.</p>
+      </div>
     </div>
 
       <section id="work" style={{ minHeight: '100vh', background: '#e0e0e0', padding: '100px 20px' }}>

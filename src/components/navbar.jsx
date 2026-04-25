@@ -51,10 +51,10 @@ export default function Navbar() {
         </div>
 
         <ul className="nav-links">
-            <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About</a></li>
-            <li><a href="#work" onClick={(e) => handleScroll(e, 'work')}>Work</a></li>
+            <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>Sobre mi</a></li>
+            <li><a href="#work" onClick={(e) => handleScroll(e, 'work')}>Proyectos</a></li>
             <li><a href="#stack" onClick={(e) => handleScroll(e, 'stack')}>Stack</a></li>
-            <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact</a></li>
+            <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contacto</a></li>
         </ul>
 
         <div className="nav-status">
