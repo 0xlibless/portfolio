@@ -1,0 +1,77 @@
+.project-card {
+    border: 1px solid #0a0a0a;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: transparent;
+    position: relative;
+    text-decoration: none;
+    color: #0a0a0a;
+    overflow: hidden;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.project-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #0a0a0a;
+}
+
+.project-icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    opacity: 0.8;
+}
+
+.project-description {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.tag-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
