@@ -25,13 +25,6 @@ export default function Navbar() {
             delay: 0.9,
             ease: "power2.out",
         });
-        gsap.to(".nav-status", {
-            opacity: 100,
-            duration: 0.6,
-            delay: 0.5,
-            color: "#eeede8a9",
-            ease: "power2.out",
-        });
     }, { scope: container });
 
     const handleScroll = (e, id) => {
@@ -56,11 +49,6 @@ export default function Navbar() {
             <li><a href="#stack" onClick={(e) => handleScroll(e, 'stack')}>Stack</a></li>
             <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contacto</a></li>
         </ul>
-
-        <div className="nav-status">
-            <div className="nav-dot" />
-            Somewhere, AR · 2026
-        </div>
         </nav>
     );
 }

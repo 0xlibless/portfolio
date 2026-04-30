@@ -9,8 +9,8 @@ export default function Project({ title, description, url, tags }) {
 
     const { contextSafe } = useGSAP({ scope: cardRef });
 
-    const handleMouseEnter = contextSafe(() => {
-        gsap.to(cardRef.current, {
+    const handleMouseEnter = contextSafe((e) => {
+        gsap.to(e.currentTarget, {
             backgroundColor: "#0a0a0a",
             color: "#eeede8",
             duration: 0.3,
@@ -34,8 +34,8 @@ export default function Project({ title, description, url, tags }) {
         });
     });
 
-    const handleMouseLeave = contextSafe(() => {
-        gsap.to(cardRef.current, {
+    const handleMouseLeave = contextSafe((e) => {
+        gsap.to(e.currentTarget, {
             backgroundColor: "transparent",
             color: "#0a0a0a",
             duration: 0.3,

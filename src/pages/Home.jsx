@@ -135,12 +135,10 @@ const PROJECTS_DATA = [
 ];
 
 const PHRASES = [
-  " まだ・まだ・早い ・ ", // Todavía es muy pronto / No es suficiente
-  " 夢を・追いかけて ・ ", // Persigue tus sueños
-  " 限界を・超えて ・ ", // Supera los límites
-  " 未来を・作る ・ ", // Crea el futuro
-  " 創造・破壊 ・ ", // Creación y destrucción
-  " 今を・生きる ・ ", // Vive el momento
+  " 諦めずに・進む ・ ", 
+  " 金曜日の・デプロイ禁止 ・ ", 
+  " 白・と・黒 ・ ", 
+  " 血の・結びつき ・ ", 
 ];
 
 const RANDOM_PHRASE = PHRASES[Math.floor(Math.random() * PHRASES.length)];
@@ -175,6 +173,8 @@ function HeroImage({ containerRef }) {
   }, [containerRef]);
 
   return (
+    null
+    /*
     <div
       className="hero-image"
       style={{
@@ -197,6 +197,7 @@ function HeroImage({ containerRef }) {
         }}
       />
     </div>
+    */
   );
 }
 
@@ -430,7 +431,7 @@ export default function Home() {
 
       <section id="projects" className="section-container">
         <div className="box projects">
-          <h1 className="subtitle">Projects</h1>
+          <h1 className="subtitle">Proyectos</h1>
           <div className="projects-grid">
             {PROJECTS_DATA.map((project, index) => (
               <Project key={index} {...project} />
@@ -453,7 +454,7 @@ export default function Home() {
       <section id="contact" className="section-container">
         <div className="box projects">
           <h1 className="subtitle">Contacto</h1>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px", marginTop: "30px", width: "100%" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "30px", width: "100%" }}>
             <a
               href="https://github.com/0xlibless/"
               target="_blank"
@@ -481,7 +482,7 @@ export default function Home() {
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "3.5rem", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>GITHUB</span>
+                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>GITHUB</span>
                 <FaGithub className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
               </div>
               <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>/0xlibless</span>
@@ -514,7 +515,7 @@ export default function Home() {
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "3.5rem", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>TWITTER</span>
+                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>TWITTER</span>
                 <FaTwitter className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
               </div>
               <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>@aguatiiin</span>
