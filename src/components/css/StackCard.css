@@ -1,0 +1,51 @@
+.stack-card {
+    border: 1px solid #0a0a0a;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: transparent;
+    color: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #0a0a0a;
+}
+
+.stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stack-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.9rem;
+    border: 1px solid currentColor;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.stack-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Logo from './Logo';
-import '../assets/Home.css';
+import '../pages/Home.css';
 import './css/navbar.css';
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
             opacity: 100,
             duration: 0.6,
             stagger: 0.08,
-            delay: 0.4,
+            delay: 0.9,
             ease: "power2.out",
         });
         gsap.to(".nav-status", {

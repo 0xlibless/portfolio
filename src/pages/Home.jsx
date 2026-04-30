@@ -1,9 +1,57 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Navbar from "../components/navbar";
-import Project from "../components/Project";
+import Navbar from "../components/Navbar";
+import Project from "../components/Project";import StackCard from "../components/StackCard";
+import {
+  SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiReact,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiLinux,
+  SiGit,
+  SiAndroid
+} from "react-icons/si";
+import { FaNetworkWired, FaTools, FaGithub, FaTwitter } from "react-icons/fa";
 
+const stackList = [
+  {
+    title: "Lenguajes",
+    items: [
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "Python", icon: <SiPython /> },
+      { name: "C++", icon: <SiCplusplus /> },
+    ],
+  },
+  {
+    title: "Frontend & Mobile",
+    items: [
+      { name: "React", icon: <SiReact /> },
+      { name: "React Native", icon: <SiReact /> },
+      { name: "Android", icon: <SiAndroid /> },
+      { name: "HTML", icon: <SiHtml5 /> },
+      { name: "CSS", icon: <SiCss3 /> },
+    ],
+  },
+  {
+    title: "Herramientas & SO",
+    items: [
+      { name: "Linux", icon: <SiLinux /> },
+      { name: "Git", icon: <SiGit /> },
+      { name: "Node.js", icon: <SiNodedotjs /> },
+    ],
+  },
+  {
+    title: "Ciberseguridad",
+    items: [
+      { name: "OSINT", icon: <FaTools /> },
+      { name: "Redes", icon: <FaNetworkWired /> },
+    ],
+  },
+];
 const PROJECTS_DATA = [
   {
     title: "KeepIt",
@@ -154,33 +202,41 @@ function HeroImage({ containerRef }) {
 
 export default function Home() {
   const mainRef = useRef(null);
-  const [activeSection, setActiveSection] = useState({});
+  const [activeSection, setActiveSection] = useState({ number: "01", name: "ABOUT" });
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const sectionList = ["about", "work", "stack", "contact"];
+    const sectionList = ["about", "projects", "stack", "contact"];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            const index = sectionList.indexOf(id);
-
-            if (index !== -1) {
-              setActiveSection({
-                number: String(index + 1).padStart(2, "0"),
-                name: id.toUpperCase(),
-              });
-            }
+    const handleScroll = () => {
+      let current = "about";
+      
+      for (let i = sectionList.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionList[i]);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.45) {
+            current = sectionList[i];
+            break;
           }
-        });
-      },
-      { root: null, threshold: 0.5 },
-    );
+        }
+      }
 
-    sections.forEach((s) => observer.observe(s));
-    return () => sections.forEach((s) => observer.unobserve(s));
+      setActiveSection((prev) => {
+        const newName = current.toUpperCase();
+        if (prev.name !== newName) {
+          return {
+            number: String(sectionList.indexOf(current) + 1).padStart(2, "0"),
+            name: newName,
+          };
+        }
+        return prev;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useGSAP(
@@ -258,6 +314,29 @@ export default function Home() {
       gsap.from("#projects", {
         scrollTrigger: {
           trigger: "#projects",
+          start: "top 90%",
+
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from("#stack", {
+        scrollTrigger: {
+          trigger: "#stack",
+          start: "top 90%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from("#contact", {
+        scrollTrigger: {
+          trigger: "#contact",
           start: "top 90%",
         },
         y: 50,
@@ -360,9 +439,89 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="stack" className="section-container"></section>
+      <section id="stack" className="section-container">
+        <div className="box projects">
+          <h1 className="subtitle">Stack</h1>
+          <div className="stack-grid">
+            {stackList.map((category, index) => (
+              <StackCard key={index} {...category} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section id="contact" className="section-container" />
+      <section id="contact" className="section-container">
+        <div className="box projects">
+          <h1 className="subtitle">Contacto</h1>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px", marginTop: "30px", width: "100%" }}>
+            <a
+              href="https://github.com/0xlibless/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: "30px 40px",
+                border: "1px solid #0a0a0a",
+                color: "#0a0a0a",
+                textDecoration: "none",
+                minHeight: "160px",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#0a0a0a";
+                e.currentTarget.style.color = "#eeede8";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1.1) rotate(5deg)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#0a0a0a";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1) rotate(0deg)";
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "3.5rem", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>GITHUB</span>
+                <FaGithub className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
+              </div>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>/0xlibless</span>
+            </a>
+
+            <a
+              href="https://x.com/aguatiiin"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: "30px 40px",
+                border: "1px solid #0a0a0a",
+                color: "#0a0a0a",
+                textDecoration: "none",
+                minHeight: "160px",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#0a0a0a";
+                e.currentTarget.style.color = "#eeede8";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1.1) rotate(-5deg)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#0a0a0a";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1) rotate(0deg)";
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "3.5rem", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>TWITTER</span>
+                <FaTwitter className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
+              </div>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>@aguatiiin</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
