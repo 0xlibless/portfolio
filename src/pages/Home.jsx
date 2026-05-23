@@ -13,7 +13,8 @@ import {
   SiNodedotjs,
   SiLinux,
   SiGit,
-  SiAndroid
+  SiAndroid,
+  SiC
 } from "react-icons/si";
 import { FaNetworkWired, FaTools, FaGithub, FaTwitter } from "react-icons/fa";
 
@@ -24,6 +25,7 @@ const stackList = [
       { name: "JavaScript", icon: <SiJavascript /> },
       { name: "Python", icon: <SiPython /> },
       { name: "C++", icon: <SiCplusplus /> },
+      { name: "C", icon: <SiC/> },
     ],
   },
   {
@@ -53,11 +55,55 @@ const stackList = [
   },
 ];
 const PROJECTS_DATA = [
+{
+    title: "WI-HI?",
+    description:
+      "Herramienta para identificar dispositivos vivos en una red wifi sin utilizar ningun tipo de libreria externa, solo con sockets y raw packets",
+    url: "https://github.com/0xagvz/WI-HI",
+    tags: [
+      { name: "C++", color: "#00599c" },
+      { name: "Ciberseguridad", color: "rgba(255, 255, 255, 1)" },
+    ],
+    icon: "github",
+  },
+  {
+    title: "zlaunch",
+    description:
+      "Precacher de binarios en Linux. Comprime ejecutables en RAM con zlib y los lanza directamente desde memoria sin tocar el disco.",
+    url: "https://github.com/0xagvz/zlaunch",
+    tags: [
+      { name: "C", color: "#A8B9CC" },
+      { name: "Linux", color: "#FCC624" },
+      { name: "Systems", color: "rgba(255, 255, 255, 1)" },
+    ],
+  },
+  {
+    title: "Chip8-Emulator",
+    description:
+      "Emulador del sistema Chip8, desarrollado en C++. Permite ejecutar juegos para esta máquina virtual.",
+    url: "https://github.com/0xagvz/Chip8-Emulator",
+    tags: [
+      { name: "C++", color: "#00599c" },
+      { name: "Linux", color: "#FCC624" },
+    ],
+  },
   {
     title: "KeepIt",
     description:
       "Aplicación Android enfocada en la gestión de fotos, utilizando gestos tipo swipe para decidir de forma rápida qué imágenes conservar o eliminar, optimizando el espacio de almacenamiento.",
-    url: "https://github.com/0xlibless/KeepIt",
+    url: "https://github.com/0xagvz/KeepIt",
+    tags: [
+      { name: "JavaScript", color: "#fbd719" },
+      { name: "Android", color: "#3DDC84" },
+      { name: "React Native", color: "#61dafb" },
+    ],
+    icon: "github",
+  },
+  {
+    title: "Super TaTeTi",
+    description:
+      "Una idea propia reimaginada del TicTacToe, pero con un nivel más alto de dificultad. Desarrollado en React Native, con backend multijugador",
+    url: "https://github.com/0xagvz/SuperTaTeTi/",
     tags: [
       { name: "JavaScript", color: "#fbd719" },
       { name: "Android", color: "#3DDC84" },
@@ -69,7 +115,7 @@ const PROJECTS_DATA = [
     title: "Chatty.cpp",
     description:
       "Aplicación Android para inferencia de modelos LLM locales, escrita en JavaScript. Pensado para gente mayor de poco conocimiento técnico.",
-    url: "https://github.com/0xlibless/Chatty.cpp",
+    url: "https://github.com/0xagvz/Chatty.cpp",
     tags: [
       { name: "JavaScript", color: "#fbd719" },
       { name: "AI", color: "#ff66cc" },
@@ -79,13 +125,13 @@ const PROJECTS_DATA = [
     icon: "github",
   },
   {
-    title: "WI-HI?",
+    title: "IgForAnons",
     description:
-      "Herramienta para identificar dispositivos vivos en una red wifi sin utilizar ningun tipo de libreria externa, solo con sockets y raw packets",
-    url: "https://github.com/0xlibless/WI-HI",
+      "Herramienta para anonimizar la actividad en Instagram, permitiendo la visualizacion y la descarga de Historias. Función opcional de proxy",
+    url: "https://github.com/0xagvz/IgForAnons",
     tags: [
-      { name: "C++", color: "#00599c" },
-      { name: "Ciberseguridad", color: "rgba(255, 255, 255, 1)" },
+      { name: "Python", color: "#3776ab" },
+      { name: "OSINT", color: "#ff4d4d" },
     ],
     icon: "github",
   },
@@ -93,7 +139,7 @@ const PROJECTS_DATA = [
     title: "ProxyScrapper",
     description:
       "Automatización en Python para recolectar y validar proxies desde fuentes públicas.",
-    url: "https://github.com/0xlibless/FreeProxyScraper",
+    url: "https://github.com/0xagvz/FreeProxyScraper",
     tags: [
       { name: "Python", color: "#3776ab" },
       { name: "OSINT", color: "#ff4d4d" },
@@ -102,34 +148,11 @@ const PROJECTS_DATA = [
     icon: "github",
   },
   {
-    title: "IgForAnons",
-    description:
-      "Herramienta para anonimizar la actividad en Instagram, permitiendo la visualizacion y la descarga de Historias. Función opcional de proxy",
-    url: "https://github.com/0xlibless/IgForAnons",
-    tags: [
-      { name: "Python", color: "#3776ab" },
-      { name: "OSINT", color: "#ff4d4d" },
-    ],
-    icon: "github",
-  },
-  {
     title: "Snake Game",
     description:
       "Clásico juego de la serpiente desarrollado en C++. Mis primeros pasos dentro del lenguaje",
-    url: "https://github.com/0xlibless/SnakeGame",
+    url: "https://github.com/0xagvz/SnakeGame",
     tags: [{ name: "C++", color: "#00599c" }],
-    icon: "github",
-  },
-  {
-    title: "Super TaTeTi",
-    description:
-      "Una idea propia reimaginada del TicTacToe, pero con un nivel más alto de dificultad. Desarrollado en React Native, con backend multijugador",
-    url: "https://github.com/0xlibless/SuperTaTeTi/",
-    tags: [
-      { name: "JavaScript", color: "#fbd719" },
-      { name: "Android", color: "#3DDC84" },
-      { name: "React Native", color: "#61dafb" },
-    ],
     icon: "github",
   },
 ];
@@ -456,7 +479,7 @@ export default function Home() {
           <h1 className="subtitle">Contacto</h1>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "30px", width: "100%" }}>
             <a
-              href="https://github.com/0xlibless/"
+              href="https://github.com/0xagvz/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -485,7 +508,7 @@ export default function Home() {
                 <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>GITHUB</span>
                 <FaGithub className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
               </div>
-              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>/0xlibless</span>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>/0xagvz</span>
             </a>
 
             <a
